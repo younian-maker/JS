@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        let ul = document.querySelector('ul');
+        let liList = document.querySelectorAll('li')
+        ul.addEventListener('click', (e) => {
+            console.log(e.toElement.outerText);
+            alert(`当前点击的列表内容是${e.toElement.outerText}`)
+        }, true)
+        liList.forEach((item, index) => {
+            if (index%2) {
+                item.style.backgroundColor = '#334554'
+            } else {
+                item.style.backgroundColor = 'grey'
+            }
+        });
+    </script>
+</body>
+</html>
+•
