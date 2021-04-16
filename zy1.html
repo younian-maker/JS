@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+     function titleize(str) {
+            var pattern = new RegExp("[?�]") 
+            var rs = ""; 
+            var reg = new RegExp("[a-zA-Z]");
+    for (var i = 0; i < str.length; i++) { 
+       
+        if(str.substr(i-1, 1)=="�"&& str.substr(i, 1)=="?"&& reg.test(str.substr(i+1, 1))==true)
+         { 
+             str.replace(str.substr(i+1,1),str.substr(i+1,1).toUpperCase());
+        } 
+         rs = rs+str.substr(i, 1).replace(pattern, ' ');
+    } 
+    return rs;
+}  
+ let str = "'I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day.'"
+   console.log(titleize(str) );
+     console.log(str)
+    </script>
+</body>
+</html>
